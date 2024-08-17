@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card-body shadow">
+                <h6 class="pt-2 text-primary">Total Sales</h6>
+                <p class="fs-6">7</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card-body shadow">
+                <h6 class="pt-2 text-success">Total Revenue</h6>
+                <p class="fs-6">Rs. 1,785,000.00</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card-body shadow">
+                <h6 class="pt-2 text-secondary">Total Products</h6>
+                <p class="fs-6">6</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card-body shadow">
+                <h6 class="pt-2 text-warning">Total Categories</h6>
+                <p class="fs-6">5</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-6">
+            <div class="card-header">Last Week Sales</div>
+            <div class="card-body shadow" id="mychart"></div>
+        </div>
+        <div class="col-6">
+            <div class="card-header">Top Selling Products</div>
+            <div class="card-body shadow" id="mychart1"></div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script>
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales'],
+                ['2004', 1000],
+                ['2005', 1170],
+                ['2006', 660],
+                ['2007', 1030]
+            ]);
+            var options = {
+                title: 'Company Performance',
+                curveType: 'function',
+                legend: { position: 'bottom' }
+            };
+            var chart = new google.visualization.LineChart(document.getElementById('mychart'));
+            var chart1 = new google.visualization.LineChart(document.getElementById('mychart1'));
+            chart.draw(data, options);
+            chart1.draw(data, options);
+        }
+    </script>
+}

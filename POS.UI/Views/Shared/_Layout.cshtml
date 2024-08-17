@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - POS.UI</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/POS.UI.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/Style1.css"/>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    @* <link href="~/datatables/css/datatables.css" rel="stylesheet" />
+    <link href="~/datatables/css/datatables.min.css" rel="stylesheet" /> *@
+    <link href="~/datatables/css/datatables.min.css" rel="stylesheet" />
+    <link href="~/datatables/css/datatables.bootstrap.min.css" rel="stylesheet" />
+    @RenderSection("styles",false)
+</head>
+<body>
+    
+    <div class="sidenav padding_top">
+        <div class="SideBarHeader p-1">
+            <h2 class="mt-2">Example Store</h2>
+        </div>
+        <div class="SideBarBody">
+            <button class="dropdown-btn borderbottom">
+                Admin
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Dashboard</a>
+                <a href="#">Users</a>
+            </div>
+
+            <button class="dropdown-btn borderbottom">
+                Inventory
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="/Category/categories">Categories</a>
+                <a href="/Product/products">Products</a>
+            </div>
+
+            <button class="dropdown-btn borderbottom">
+                Sales
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#" class="borderbottom">New Sales</a>
+                <a href="#" class="borderbottom">Sales History</a>
+            </div>
+
+            <button class="dropdown-btn borderbottom">
+                Reports
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <a href="#">Sales Report</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - POS.UI - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @* <script src="~/datatables/js/datatables.js"></script>
+    <script src="~/datatables/js/datatables.min.js"></script> *@
+    <script src="~/datatables/js/datatables.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

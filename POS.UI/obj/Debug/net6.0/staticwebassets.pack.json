@@ -1,0 +1,433 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\POS.UI.bundle.scp.css",
+      "PackagePath": "staticwebassets\\POS.UI.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\app\\css\\user.css",
+      "PackagePath": "staticwebassets\\app\\css\\user.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\app\\js\\User.js",
+      "PackagePath": "staticwebassets\\app\\js\\User.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\blank-profile-picture.png",
+      "PackagePath": "staticwebassets\\assets\\blank-profile-picture.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\default_user_Image.png",
+      "PackagePath": "staticwebassets\\assets\\default_user_Image.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\3108a8b6-18f6-47d8-9472-725c95c36aac_Untitled design (29).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\3108a8b6-18f6-47d8-9472-725c95c36aac_Untitled design (29).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\3ac12721-6146-4f43-82ce-556d757d3f10_gallery-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\3ac12721-6146-4f43-82ce-556d757d3f10_gallery-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\3adf3dde-9ef9-42ed-bbf4-9e1085db3ecf_pexels-dziana-hasanbekava-5589130.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\3adf3dde-9ef9-42ed-bbf4-9e1085db3ecf_pexels-dziana-hasanbekava-5589130.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\3dc434e8-26ea-416f-920f-bf9482bf6d0bs20.webp",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\3dc434e8-26ea-416f-920f-bf9482bf6d0bs20.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\5d391e81-e9ee-450d-bec0-3460a5909c2e_images.png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\5d391e81-e9ee-450d-bec0-3460a5909c2e_images.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\6181a45a-637c-47c9-8294-a2193904e40b_Untitled design (29).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\6181a45a-637c-47c9-8294-a2193904e40b_Untitled design (29).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\6af93144-424b-4f4b-9413-db268cab912e_pexels-amanda-klamrowski-1555453.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\6af93144-424b-4f4b-9413-db268cab912e_pexels-amanda-klamrowski-1555453.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\70ec01aa-f25b-4e84-a363-31db74823b0f_Untitled design (28).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\70ec01aa-f25b-4e84-a363-31db74823b0f_Untitled design (28).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\72fefcac-8dc9-4eb7-ac4f-301645736369_pexels-amanda-klamrowski-1555453.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\72fefcac-8dc9-4eb7-ac4f-301645736369_pexels-amanda-klamrowski-1555453.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\7481b969-0c01-4b52-9527-b4b59cdb17ad_pexels-sungmu-heo-2689631.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\7481b969-0c01-4b52-9527-b4b59cdb17ad_pexels-sungmu-heo-2689631.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\88692c47-322a-4eb0-b1d6-a3374db6cd00_gallery-8.jpg",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\88692c47-322a-4eb0-b1d6-a3374db6cd00_gallery-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\8ffaebd5-0ff1-4222-a524-84633af2f68e_Untitled design (29).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\8ffaebd5-0ff1-4222-a524-84633af2f68e_Untitled design (29).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\9080b0be-7912-4c2d-bf31-dee251053fa6_Untitled (550 x 600 px) (2).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\9080b0be-7912-4c2d-bf31-dee251053fa6_Untitled (550 x 600 px) (2).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\908d089b-f491-46d9-86c5-6a440274cb43_Untitled design (29).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\908d089b-f491-46d9-86c5-6a440274cb43_Untitled design (29).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\a86d2252-02da-424a-9cb4-4d22a8084e3f_s20.webp",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\a86d2252-02da-424a-9cb4-4d22a8084e3f_s20.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\c69b8e6e-9c00-4e4a-b112-ed7a12cfa237s20.webp",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\c69b8e6e-9c00-4e4a-b112-ed7a12cfa237s20.webp"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\image\\products\\eb67bd01-aaa4-46b0-ba6c-ca2ccf89777d_gulf arabian (4).png",
+      "PackagePath": "staticwebassets\\assets\\image\\products\\eb67bd01-aaa4-46b0-ba6c-ca2ccf89777d_gulf arabian (4).png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\assets\\images\\products\\70e0a7a8-39f0-4adc-b42d-26f1a8168684_gallery-7.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\products\\70e0a7a8-39f0-4adc-b42d-26f1a8168684_gallery-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\css\\Style1.css",
+      "PackagePath": "staticwebassets\\css\\Style1.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\datatables\\css\\datatables.css",
+      "PackagePath": "staticwebassets\\datatables\\css\\datatables.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\datatables\\css\\datatables.min.css",
+      "PackagePath": "staticwebassets\\datatables\\css\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\datatables\\js\\datatables.js",
+      "PackagePath": "staticwebassets\\datatables\\js\\datatables.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\datatables\\js\\datatables.min.js",
+      "PackagePath": "staticwebassets\\datatables\\js\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\products\\6a11ba33-a743-4337-a05b-45113182fa6c_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\products\\6a11ba33-a743-4337-a05b-45113182fa6c_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\140effa8-f06d-432d-8e7a-80aa3d98c4de_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\140effa8-f06d-432d-8e7a-80aa3d98c4de_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\692fee37-7366-4dcd-bc48-9cf26a5c2242_skeleton.png",
+      "PackagePath": "staticwebassets\\image\\users\\692fee37-7366-4dcd-bc48-9cf26a5c2242_skeleton.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\74bf2ce5-38db-4b95-9e5e-32466819958d_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\74bf2ce5-38db-4b95-9e5e-32466819958d_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\7c2d50a3-e394-46f0-b2a3-0fa64d696a08_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\7c2d50a3-e394-46f0-b2a3-0fa64d696a08_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\8d18e9ee-591d-4a50-8382-b138d519e5fb_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\8d18e9ee-591d-4a50-8382-b138d519e5fb_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\9f5c462e-5548-4a7f-aeb7-1871d3eecdcf_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\9f5c462e-5548-4a7f-aeb7-1871d3eecdcf_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\bf6953f9-10ea-45ae-b3ac-b670257007a3_skeleton.png",
+      "PackagePath": "staticwebassets\\image\\users\\bf6953f9-10ea-45ae-b3ac-b670257007a3_skeleton.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\c48be737-fe61-4a0c-bedb-919c3878c3be_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\c48be737-fe61-4a0c-bedb-919c3878c3be_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\edf73966-774b-4b28-9c39-def2349ad50c_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\edf73966-774b-4b28-9c39-def2349ad50c_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\image\\users\\f86705d4-d740-47e0-a121-4dbd3830596a_skeleton-6639547_1280.png",
+      "PackagePath": "staticwebassets\\image\\users\\f86705d4-d740-47e0-a121-4dbd3830596a_skeleton-6639547_1280.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\datatables.net-dt\\css\\datatables.css",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-dt\\css\\datatables.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\datatables.net-dt\\css\\datatables.min.css",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-dt\\css\\datatables.min.css"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\datatables.net-dt\\js\\datatables.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-dt\\js\\datatables.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\datatables.net-dt\\js\\datatables.min.js",
+      "PackagePath": "staticwebassets\\lib\\datatables.net-dt\\js\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\POS\\POS.UI\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.POS.UI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.POS.UI.props",
+      "PackagePath": "build\\POS.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.POS.UI.props",
+      "PackagePath": "buildMultiTargeting\\POS.UI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.POS.UI.props",
+      "PackagePath": "buildTransitive\\POS.UI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -1,0 +1,41 @@
+﻿@using POS.Data.Models;
+@model IEnumerable<CategoryModel>
+
+
+<div class="container">
+    <a class="btn btn-primary" asp-action="AddCategory">Add Category</a>
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var category in Model)
+                {
+                    <tr>
+                        <td>@category.Category_Name</td>
+                        <td>@category.Description</td>
+                        @if (@category.Status)
+                        {
+                            <td>Active</td>
+                        }
+                        else
+                        {
+                            <td>Not Active</td>
+                        }
+
+                        <td>
+                            <a class="btn btn-primary" asp-action="AddCategory" asp-route-id="@category.Category_ID" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a class="btn btn-danger" asp-action="DeleteCategory" asp-route-id="@category.Category_ID" title="Delete"><i class="fa-regular fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>

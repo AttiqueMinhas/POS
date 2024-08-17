@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "SalesHistory";
+}
+
+<h1>SalesHistory</h1>
+
+<div class="container">
+    <div class="card shadow">
+        <div class="card-header">Sale History</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-3">
+                    <label>Search By</label>
+                </div>
+                <div class="col-3">
+                    <label>Start Date</label>
+                </div>
+                <div class="col-3">
+                    <label>End Date</label>
+                </div>
+                <div class="col-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <select>
+                        <option>Dates</option>
+                        <option>Sale Number</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input type="date" />
+                </div>
+                <div class="col-3">
+                    <input type="date" />
+                </div>
+                <div class="col-3">
+                    <a class="btn btn-success">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

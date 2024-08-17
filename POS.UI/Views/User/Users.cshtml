@@ -1,0 +1,183 @@
+﻿@using POS.Data.Models
+@model List<UserModel>
+@{
+    ViewData["Title"] = "Users";
+}
+@section styles {
+    <link href="~/app/css/user.css" rel="stylesheet" />
+}
+<h1>Users</h1>
+
+<div class="Container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-6">Users</div>
+                <div class="col-6 d-flex justify-content-end">
+                    <a class="btn btn-success" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">New User</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table id="myTable" class="table table-striped table-bordered dt-responsive nowrap" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                        <th>State</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td><img src="@user.ImagePath" alt="User Image" style="width: 50px; height: 50px; object-fit: cover;" /></td>
+                            <td>@user.UserName</td>
+                            <td>@user.Email</td>
+                            <td>@user.Phone</td>
+                            <td>@user.Role</td>
+                            <td>@(user.State ? "Active" : "Inactive")</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm edit-btn" data-id="@user.UserID"><i class="fa-regular fa-pen-to-square" style="color: #ffffff;"></i></button>
+                                <button class="btn btn-danger btn-sm delete-btn" data-id="@user.UserID"><i class="fa-solid fa-trash" style="color: #ffffff;"></i></button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form id="userForm" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add/Edit</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Modal body content -->
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Name</label>
+                                </div>
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Email</label>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <input type="text" id="nametxt" name="UserName" />
+                                </div>
+                                <div class="col-6 p-0">
+                                    <input type="email" id="emailtxt" name="Email" />
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Phone</label>
+                                </div>
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Role</label>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <input type="text" id="phonetxt" name="Phone" />
+                                </div>
+                                <div class="col-6 p-0">
+                                    <select style="width:235px" id="roletxt" name="Role">
+                                        <option>Admin</option>
+                                        <option>Employee</option>
+                                        <option>Inspector</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Password</label>
+                                </div>
+                                <div class="col-6 p-0">
+                                    <label class="form-label">State</label>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <input type="password" id="passwordtxt" name="Password" />                                </div>
+                                <div class="col-6 p-0">
+                                    <select style="width:235px" id="statetxt" name="State">
+                                        <option value="True">Active</option>
+                                        <option value="False">Inactive</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <label class="form-label">Photo</label>
+                                </div>
+                            </div>
+                            <div class="row ms-1">
+                                <div class="col-6 p-0">
+                                    <input type="file" id="fileInput" accept="image/*" name="Image" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div>
+                                    <img src="~/assets/blank-profile-picture.png" height="100" id="userImage" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="UserNameError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="EmailError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="PhoneError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="RoleError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="PasswordError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="StateError" class="spanErrorMsg"></span>
+                    </div>
+                    <div class="row ms-1 mt-1">
+                        <span id="ImageError" class="spanErrorMsg"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <input type="submit" class="btn btn-primary"></input>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/app/js/user.js"></script>
+}
+
+
+
+
+

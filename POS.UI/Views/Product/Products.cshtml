@@ -1,0 +1,49 @@
+﻿@using POS.Data.Models;
+@model IEnumerable<ProductModel>
+
+
+<div class="container">
+    <a class="btn btn-primary" asp-action="AddEditProduct" asp-controller="Product">Add Product</a>
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>Brand</th>
+                    <th>Category_Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>State</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content(product.IPath)" style="width:100px;height:100px;" />
+                        </td>
+                        <td>@product.Brand</td>
+                        <td>@product.Category_Name</td>
+                        <td>@product.Price</td>
+                        <td>@product.Status</td>
+                        @if (product.Status)
+                        {
+                            <td>Active</td>
+                        }
+                        else
+                        {
+                            <td>Not Active</td>
+                        }
+
+                        <td>
+                            <a class="btn btn-info" asp-action="AddEditProduct" asp-controller="Product" asp-route-id="@product.Product_Id" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <a class="btn btn-danger" asp-action="DeleteProduct" asp-controller="Product" asp-route-id="@product.Product_Id" title="Delete"><i class="fa-regular fa-trash-can"></i></a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.spanErrorMsg{
+    color: red;
+    font-size: 10px;
+    font-family:Bahnschrift;
+    line-height: 12px;
+}
+
+#myTable td{
+    font-size: 14px;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+/* Ensure the container for the search input and buttons is displayed flexibly */
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    /* Style the search input to fit within the flex container */
+    .dataTables_wrapper .dataTables_filter input {
+        margin-right: 10px; /* Space between search input and button */
+    }
+
+/* Ensure buttons are aligned and spaced correctly */
+.dataTables_wrapper .dataTables_buttons {
+    margin-left: auto; /* Push buttons to the right */
+}
+
+.btn-export {
+    margin-left: 10px; /* Space between buttons if you have multiple */
+}

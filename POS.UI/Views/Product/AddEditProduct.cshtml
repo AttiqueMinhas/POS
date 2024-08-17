@@ -1,0 +1,97 @@
+﻿@model POS.Data.Models.ProductModel;
+<div class="container">
+    <h3>Add New Category</h3>
+    <form method="post" asp-controller="Product" asp-action="AddEditProduct" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Product_Id" class="form-control" />
+        
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Product_Name" class="control-label">Product Name</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Product_Name" class="form-control" required />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="BarCode" class="control-label">BarCode</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="BarCode" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Price" class="control-label">Price</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Price" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Brand" class="control-label">Brand</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Brand" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Description" class="control-label">Description</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Description" class="form-control" required />
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Category_ID" class="control-label">Categories</label>
+            </div>
+            <div class="col-8">
+                <select class="form-control" asp-for="Category_ID" asp-items="@(new SelectList(Model.Categories,"Category_ID","Category_Name"))">
+                    <option value="-1">---Select Category---</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Quantity" class="control-label">Quantity</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Quantity" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Status" class="control-label">Status</label>
+            </div>
+            <div class="col-8">
+                <select asp-for="Status" class="form-control">
+                    <option value="default"> Select Status</option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Image" class="control-label">Image</label>
+            </div>
+            <div class="col-8">
+                <input type="file" asp-for="Image" class="form-control" required />
+                <span>@ViewBag.img</span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a type="button" class="btn btn-danger" asp-action="products" asp-controller="Product">Cancel</a>
+    </form>
+</div>

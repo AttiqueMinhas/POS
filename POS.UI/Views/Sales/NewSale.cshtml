@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "NewSale";
+}
+@section styles {
+    <link href="c:\users\attique\source\repos\pos\pos\pos.ui\wwwroot\app\css\sales.css" rel="stylesheet" />
+}
+<h1>NewSale</h1>
+
+
+<div class="container">
+    <h1 class="mt-4">Sales</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Client</div>
+                <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Client ID">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Full Name">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">Products</div>
+                <div class="card-body">
+                    <input type="text" class="form-control" placeholder="Search product...">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Product rows will go here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">Detail</div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="saleType">Type</label>
+                        <select id="saleType" class="form-control">
+                            <option>Ticket</option>
+                            <option>Invoice</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subTotal">Sub Total</label>
+                        <input type="text" id="subTotal" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="totalTaxes">Total Taxes (18%)</label>
+                        <input type="text" id="totalTaxes" class="form-control" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="total">Total</label>
+                        <input type="text" id="total" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <button class="btn btn-lg btn-success btn-block finalize-sale-btn">Finalize Sale</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@* <div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="card-header">Client</div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6"><input type="text" class="form-control"/></div>
+                    <div class="col-6"><input type="text" class="form-control" /></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card-header">Detail</div>
+            <div class="card-body">
+                <div class="row">
+                    <span><div>Type</div>
+                        <span>
+                            <select class="form-control">
+                                <option value="value">Ticket</option>
+                                <option value="value">Invoice</option>
+                            </select>
+                        </span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> *@

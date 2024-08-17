@@ -1,0 +1,40 @@
+﻿@model POS.Data.Models.CategoryModel;
+<div class="container">
+    <h3>Add New Category</h3>
+    <form method="post" asp-controller="Category" asp-action="AddCategory">
+        <div asp-validation-summary="All"></div>
+        <input type="hidden" asp-for="Category_ID" class="form-control"/>
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Category_Name" class="control-label">Category Name</label>
+            </div>
+            <div class="col-8">
+                <input type="text" asp-for="Category_Name" class="form-control" required />
+            </div>
+        </div>
+        <span asp-validation-for="Category_Name" class="Text-danger"></span>
+        <br />
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Description" class="control-label">Description</label>
+            </div>
+            <div class="col-8">
+                <textarea type="text" placeholder="Type Here..." asp-for="Description" class="form-control" rows="3"></textarea>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-4">
+                <label asp-for="Status" class="control-label">Status</label>
+            </div>
+            <div class="col-8">
+                <select asp-for="Status" class="form-control">
+                    <option value="default"> Select Status</option>
+                    <option value="True">True</option>
+                    <option value="False">False</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-primary">Save</button>
+    </form>
+</div>
