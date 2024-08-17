@@ -137,7 +137,11 @@ $(document).ready(function () {
             }
         }
     });
-
+    $('#addUserLinkBtn').on('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor tag behavior
+        clearFields();
+        $('#myModal').modal('show'); // Show the modal if needed
+    });
     function clearFields() {
         $('#nametxt').val('');
         $('#emailtxt').val('');
@@ -145,6 +149,8 @@ $(document).ready(function () {
         $('#roletxt').val('');
         $('#passwordtxt').val('');
         $('#statetxt').val('');
-        $("#userImage").attr("src", 'C:\Users\user\source\repos\POS\POS.UI\wwwroot\assets\default_user_Image.png');
+        $("#userImage").attr("src", '/assets/default_user_Image.png');
     }
+
+
 });
