@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using POS.Data.DataAccess;
 using POS.Data.Models;
+using POS.Data.Models.ModelVM.Request;
 using POS.Data.Repositories.Definition;
 using System.Text.RegularExpressions;
 
@@ -66,7 +67,7 @@ namespace POS.UI.Controllers
                var user = await _userRepo.getUserByID(id);
                if (user != null)
                 {
-                    return Json(user);
+                    return Json(new { isValid = true, userData = user});
                 }
                else
                 {
@@ -131,15 +132,21 @@ namespace POS.UI.Controllers
                     }
 
                     int TotalrowsCount = await _userRepo.AddNewUser(model);
-                    // Process the model if valid
-                    return Ok(new { success = true });
+                    if (TotalrowsCount > 0)
+                    {
+                        return Ok(new { isValid = true });
+                    }
+                    else
+                    {
+                        return Ok(new { isValid = false });
+                    }
                 }
-                return Ok(new { success = true });
+                return Ok(new { isValid = true });
             }
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditUser([FromForm] UserModel model)
+        public async Task<IActionResult> EditUser([FromForm] EditRequestVM model)
         {
             if (!ModelState.IsValid)
             {
@@ -189,17 +196,53 @@ namespace POS.UI.Controllers
                         ViewBag.img = "Upload Image file less than 10 mb";
                     }
 
-                    int TotalrowsCount = await _userRepo.AddNewUser(model);
+                    int TotalrowsCount = await _userRepo.editUser(model);
+
                     // Process the model if valid
-                    return Ok(new { success = true });
+                    if(TotalrowsCount > 0)
+                    {
+                        return Ok(new { isValid = true });
+                    }
+                    else
+                    {
+                        return Ok(new { isValid = false });
+                    }
+                    
                 }
                 else
                 {
-                    int TotalrowsCount = await _userRepo.AddNewUser(model);
+                    model.ImagePath = model.ExistingImagePath;
+                    int TotalrowsCount = await _userRepo.editUser(model);
                     // Process the model if valid
-                    return Ok(new { success = true });
+                    if (TotalrowsCount > 0)
+                    {
+                        return Ok(new { isValid = true });
+                    }
+                    else
+                    {
+                        return Ok(new { isValid = false });
+                    }
                 }
-                return Ok(new { success = true });
+            }
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            if (id != 0)
+            {
+                var totalRowsCount = await _userRepo.deleteUser(id);
+                if (totalRowsCount > 0)
+                {
+                    return Json(new { isValid = true, message = "User Deleted Successfully." });
+                }
+                else
+                {
+                    return Json(new { isValid = false, message = "User Not Found." });
+                }
+            }
+            else
+            {
+                return Json(new { isValid = false, message = "Please Enter Id of the User." });
             }
         }
     }

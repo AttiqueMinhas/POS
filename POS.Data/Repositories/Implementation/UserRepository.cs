@@ -1,5 +1,6 @@
 ﻿using POS.Data.DataAccess;
 using POS.Data.Models;
+using POS.Data.Models.ModelVM.Request;
 using POS.Data.Repositories.Definition;
 using System;
 using System.Collections.Generic;
@@ -137,24 +138,87 @@ namespace POS.Data.Repositories.Implementation
             }
         }
 
-        //public async Task<int> editUser(UserModel user)
-        //{
-        //    try
-        //    {
-        //        var userModel = await getUserByID(user.UserID);
-        //        var isMatch = isMatchHashPassword(userModel.Password, user.Password, userModel.Salt);
-        //        if(isMatch)
-        //        {
+        public async Task<int> editUser(EditRequestVM user)
+        {
+            try
+            {
+                int totalRows;
+                string spName = "sp_EditUser";
+                if (user.Role == roleId.Admin.ToString())
+                {
+                    user.RoleID = (int)roleId.Admin;
+                }
+                else if (user.Role == roleId.Employee.ToString())
+                {
+                    user.RoleID = (int)roleId.Employee;
+                }
+                else if (user.Role == roleId.Inspector.ToString())
+                {
+                    user.RoleID = (int)roleId.Inspector;
+                }
+                if(user.ImagePath != null)
+                {
+                    totalRows = await _db.SaveData<dynamic>(spName, new
+                    {
+                        user.UserID,
+                        user.UserName,
+                        user.Email,
+                        user.Phone,
+                        user.RoleID,
+                        user.State,
+                        user.ImagePath
+                    });
+                }
+                else
+                {
+                    totalRows = await _db.SaveData<dynamic>(spName, new
+                    {
+                        user.UserID,
+                        user.UserName,
+                        user.Email,
+                        user.Phone,
+                        user.RoleID,
+                        user.State
+                    });
+                }
+                
+                if (totalRows > 0)
+                {
+                    return totalRows;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0;
+            }
+        }
 
-        //        }
-        //        userModel.Password
-        //    }
-        //    catch(Exception ex)
-        //    {
-        //        Console.WriteLine(ex.Message);
-        //        return 0;
-        //    }
-        //}
+        public async Task<int> deleteUser(int? UserID)
+        {
+            try
+            {
+                string spName = "sp_DeleteUser";
+                int totalRowsCount = await _db.SaveData<dynamic>(spName, new { UserID });
+                if (totalRowsCount > 0)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+
+        }
 
         #region Private Methods
         const int keySize = 64;
