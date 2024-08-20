@@ -1,4 +1,5 @@
 ﻿using POS.Data.Models;
+using POS.Data.Models.ModelVM.Request;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,7 @@ namespace POS.Data.Repositories.Definition
         Task<int> AddNewUser(UserModel model);
         Task<List<UserModel>> getUsers();
         Task<UserModel> getUserByID(int? UserID);
+        Task<int> editUser(EditRequestVM user);
+        Task<int> deleteUser(int? UserID);
     }
 }

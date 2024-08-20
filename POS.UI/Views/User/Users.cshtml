@@ -55,7 +55,7 @@
 
 
 
-<!-- Modal -->
+<!-- Modal Add Edit-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -78,6 +78,7 @@
                             </div>
                             <div class="row ms-1">
                                 <div class="col-6 p-0">
+                                    <input type="hidden" id="userId" name="userId" value="0" />
                                     <input type="text" id="nametxt" name="UserName" />
                                 </div>
                                 <div class="col-6 p-0">
@@ -130,13 +131,14 @@
                             <div class="row ms-1">
                                 <div class="col-6 p-0">
                                     <input type="file" id="fileInput" accept="image/*" name="Image" />
+                                    <input type="hidden" id="existingImagePath" name="ExistingImagePath" value="" />
                                 </div>
                             </div>
                         </div>
                         <div class="col-4">
                             <div class="row">
-                                <div>
-                                    <img src="~/assets/blank-profile-picture.png" height="100" id="userImage" />
+                                <div class="mt-3">
+                                    <img src="~/assets/blank-profile-picture.png" height="190" width="175" id="userImage" />
                                 </div>
                             </div>
                         </div>
@@ -155,6 +157,7 @@
                     </div>
                     <div class="row ms-1 mt-1">
                         <span id="PasswordError" class="spanErrorMsg"></span>
+                        <span id="pswdNoteMsg" class="text-info p-0"></span>
                     </div>
                     <div class="row ms-1 mt-1">
                         <span id="StateError" class="spanErrorMsg"></span>
@@ -169,6 +172,31 @@
                 </div>
             </form>
             
+        </div>
+    </div>
+</div>
+
+
+<!-- Button trigger modal -->
+@* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Launch static backdrop modal
+</button> *@
+
+<!-- Modal Delete User Confirmation-->
+<div class="modal fade" id="delUserConfirmationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6>Are you sure u want to delete this user?</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary cancel">Cancel</button>
+                <button type="button" class="btn btn-primary ok">Yes</button>
+            </div>
         </div>
     </div>
 </div>
