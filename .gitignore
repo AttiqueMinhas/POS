@@ -11,7 +11,13 @@
 # Auto-generated files
 /bin/
 /obj/
+*.dll
+*.pdb
+*.exe
 
+# Ignore other generated files
+*.cache
+*.json
 # ASP.NET Scaffolding
 ScaffoldingReadMe.txt
 
