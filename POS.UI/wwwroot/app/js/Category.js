@@ -1,6 +1,6 @@
 ﻿/*const { post } = require("jquery");*/
 
-$(document).ready(function () {
+$/*(document).ready*/(function () {
     $('#myCategoryTable').dataTable({
         "paging": true,
         "searching": true,

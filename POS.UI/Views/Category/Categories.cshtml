@@ -2,14 +2,14 @@
 @model IEnumerable<CategoryModel>
 
 @section styles {
-    <link href="~/app/css/user.css" rel="stylesheet" />
+    <link href="~/app/css/category.css" rel="stylesheet" />
 }
 
 <div class="Container">
-    <div class="card">
+    <div class="card mt-5">
         <div class="card-header">
             <div class="row">
-                <div class="col-6">Users</div>
+                <div class="col-6">Categories</div>
                 <div class="col-6 d-flex justify-content-end">
                     <a class="btn btn-primary" asp-action="AddCategory">Add Category</a>
                 </div>
@@ -53,5 +53,5 @@
 </div>
 
 @section Scripts {
-    <script src="~\app\js\category.js"></script>
+    <script src="~/app/js/category.js"></script>
 }
