@@ -1,6 +1,6 @@
 ﻿/*const { post } = require("jquery");*/
 
-$(document).ready(function () {
+$/*(document).ready*/(function () {
 
     $('#userForm').on('submit', function (event) {
         debugger
