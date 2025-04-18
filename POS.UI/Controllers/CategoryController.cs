@@ -21,8 +21,11 @@ namespace POS.UI.Controllers
         [HttpGet]
         public async Task<IActionResult> AddCategory(int id)
         {
-
-            var cModel =  await _category.getCategoryById(id);
+            CategoryModel cModel = new CategoryModel();
+            if (id != 0)
+            {
+                cModel = await _category.getCategoryById(id);
+            }
             return View(cModel);
         }
         [HttpPost]

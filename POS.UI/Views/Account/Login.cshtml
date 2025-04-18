@@ -1,0 +1,54 @@
+﻿@using POS.Data.Models.ModelVM.Request
+@model LoginRequest
+@{
+    ViewData["Title"] = "Login";
+    Layout = "_UserLayout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 border-1 border-light text-center m-5" id="div-Center">
+            <h2 class="text-white mb-5">Login</h2>
+            <div class="col-6"></div>
+            <div class="col-6">
+                <form asp-action="Login" asp-controller="Account">
+                    <input type="hidden" name="ReturnUrl" value="@ViewData["ReturnUrl"]" />
+                    <div class="row mb-3">
+                        @if (!String.IsNullOrEmpty(ViewBag.emailMessage))
+                        {
+                            <span>@ViewBag.emailMessage</span>
+                        }
+                        @if (!String.IsNullOrEmpty(ViewBag.passwordMessage))
+                        {
+                            <span>@ViewBag.passwordMessage</span>
+                        }
+                        <div class="col-4 text-start">
+                            <label asp-for="UserNameOrEmail" class="form-label"></label>
+                        </div>
+                        <div class="col-8">
+                            <input type="text" asp-for="UserNameOrEmail" class="form-control" />
+                            <span asp-validation-for="UserNameOrEmail"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4 text-start">
+                            <label asp-for="Password" class="form-label"></label>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-4 text-start"></div>
+                        <div class="col-8">
+                            <input type="submit" value="Login" class="btn btn-primary col-12" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+   

@@ -20,11 +20,23 @@ namespace POS.Data.DataAccess
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
             return await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.StoredProcedure);
         }
-        public async Task<int> GetScalarValue<P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        public async Task<List<T>> GetDataList<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            return (List<T>)await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.Text);
+        }
+        public async Task<dynamic> GetScalarValue<P>(string spName, P parameters, string connectionId = "DefaultConnection")
         {
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
             var result = await connection.ExecuteScalarAsync(spName, parameters, commandType: CommandType.StoredProcedure);
             return result != null ? Convert.ToInt32(result) : 0;
+        }
+
+        public async Task<dynamic> GetScalarStringValue<P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            var result = await connection.ExecuteScalarAsync(spName, parameters, commandType: CommandType.StoredProcedure);
+            return result;
         }
 
         public async Task<T?> GetSingleRow<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
@@ -40,5 +52,30 @@ namespace POS.Data.DataAccess
             return await connection.ExecuteAsync(spName,Parameters, commandType: CommandType.StoredProcedure);
         }
 
+
+        public async Task<IEnumerable<T>> GetQueryData<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            return await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.Text);
+        }
+
+        public async Task<IEnumerable<T>> GetQueryTableData<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            return await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<SqlMapper.GridReader> QueryMultipleAsync<P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            var connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            await connection.OpenAsync(); // optional, Dapper does it
+            return await connection.QueryMultipleAsync(spName, parameters, commandType: CommandType.StoredProcedure);
+        }
+
+        public async Task<List<string>> GetQueryAsync<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            return (await connection.QueryAsync<string>(spName, parameters, commandType: CommandType.Text)).ToList();
+        }
     }
 }

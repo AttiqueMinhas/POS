@@ -13,6 +13,7 @@ namespace POS.Data.Repositories.Definition
         Task<int> AddProduct(ProductModel pmodel);
 
         Task<ProductModel> GetProductById(int productId);
+        Task<IEnumerable<ProductModel>> SearchProducts(string query);
         Task<int> DeleteProduct(int Id);
 
     }

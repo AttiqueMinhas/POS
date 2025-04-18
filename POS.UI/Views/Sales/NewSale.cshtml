@@ -1,109 +1,137 @@
-﻿@{
+﻿@model POS.Data.Models.ModelVM.Request.SaleRequest;
+@{
     ViewData["Title"] = "NewSale";
 }
 @section styles {
-    <link href="c:\users\attique\source\repos\pos\pos\pos.ui\wwwroot\app\css\sales.css" rel="stylesheet" />
+    <link href="~/css/sales/newsale.css" rel="stylesheet" />
+
 }
-<h1>NewSale</h1>
-
-
 <div class="container">
-    <h1 class="mt-4">Sales</h1>
-    <div class="row">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Client</div>
-                <div class="card-body">
-                    <div class="form-row">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Client ID">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Full Name">
+    <form class="newSaleForm">
+        <div class="row mt-5">
+            <div class="col-md-8">
+                <div class="card shadow mb-4">
+                    <div class="card-header">Client</div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Client ID" id="txtclientId">
+                                <span asp-validation-for="sale.CustomerDocument" class="fs-6 text-danger"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Full Name" id="txtclientName">
+                                <span asp-validation-for="sale.ClientName" class="fs-6 text-danger"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="card shadow mb-4">
+                    <div class="card-header">Products</div>
+                    <div class="card-body">
+                        <div class="form-row">
+                            <div class="form-group sm-12">
+                                <div class="dropdown border w-100" id="dropdownTrigger">
+                                    <p class="m-0">Search product...</p>
+                                    <img src="~/image/icons/down.png" style="width:25px;" id="dropdownIcon" />
+                                    <div class="dropdown-content" id="dropdownContent">
+                                        <input type="text" id="searchProduct" class="form-control" placeholder="Search product..." autocomplete="off">
+                                        <div id="searchResults" class="dropdown-menu">
+                                            <!-- Search results will be dynamically inserted here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <table class="table mt-4">
+                            <thead class="border-top border-dark">
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody" class="fs-6">
+                                <!-- Product rows will go here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <div class="card-header">Products</div>
-                <div class="card-body">
-                    <input type="text" class="form-control" placeholder="Search product...">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Product</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Product rows will go here -->
-                        </tbody>
-                    </table>
+            <div class="col-md-4">
+                <div class="card shadow mb-4">
+                    <div class="card-header">Detail</div>
+                    <div class="card-body">
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" for="saleType" id="inputGroupSaleType">Type</span>
+                            </div>
+                            <select asp-for="sale.TypeDocumentSaleID" asp-items="Model.documentTypes" class="form-control" id="saleType" aria-label="Small" aria-describedby="inputGroupSaleType">
+                                <option value="">-- Select Document Type --</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="sale.TypeDocumentSaleID" class="fs-6 text-danger"></span>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" for="subTotal" id="inputGroupSubTotal">Sub Total</span>
+                            </div>
+                            <input type="text" class="form-control text-right" aria-label="Small" aria-describedby="inputGroupSubTotal" id="subTotal" disabled>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" for="totalTaxes" id="inputGroupTotalTaxes">Total Taxes (18%)</span>
+                            </div>
+                            <input type="text" class="form-control text-right" aria-label="Small" aria-describedby="inputGroupTotalTaxes" id="totalTaxes" disabled>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" for="total" id="inputGroupTotal">Total</span>
+                            </div>
+                            <input type="text" class="form-control text-right" aria-label="Small" aria-describedby="inputGroupTotal" id="total" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <div class="form-group mb-0">
+                                    <button type="submit" class="btn btn-success btn-sm btn-block w-100" id="finalizeSale">Finalize Sale</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">Detail</div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label for="saleType">Type</label>
-                        <select id="saleType" class="form-control">
-                            <option>Ticket</option>
-                            <option>Invoice</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="subTotal">Sub Total</label>
-                        <input type="text" id="subTotal" class="form-control" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="totalTaxes">Total Taxes (18%)</label>
-                        <input type="text" id="totalTaxes" class="form-control" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="total">Total</label>
-                        <input type="text" id="total" class="form-control" readonly>
-                    </div>
-                </div>
+    </form>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h1 class="modal-title fs-5" id="modalTitle">Modal Title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <button class="btn btn-lg btn-success btn-block finalize-sale-btn">Finalize Sale</button>
+            <div class="modal-body">
+                <div class="text-center">
+                    <p id="txtDescription"></p>
                 </div>
+                <input type="text" id="txtQuantity" class="form-control" placeholder="Enter Quantity" >
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="setQuantity">Ok</button>
             </div>
         </div>
     </div>
 </div>
 
-
-@* <div class="container">
-    <div class="row">
-        <div class="col-8">
-            <div class="card-header">Client</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6"><input type="text" class="form-control"/></div>
-                    <div class="col-6"><input type="text" class="form-control" /></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card-header">Detail</div>
-            <div class="card-body">
-                <div class="row">
-                    <span><div>Type</div>
-                        <span>
-                            <select class="form-control">
-                                <option value="value">Ticket</option>
-                                <option value="value">Invoice</option>
-                            </select>
-                        </span>
-                    </span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> *@
+@section Scripts {
+    <script src="~/app/js/newsale.js" asp-append-version="true"></script>
+    <partial name="_ValidationScriptsPartial" />
+}

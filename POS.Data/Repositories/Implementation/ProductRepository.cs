@@ -21,7 +21,7 @@ namespace POS.Data.Repositories.Implementation
 
         public async Task<int> AddProduct(ProductModel pmodel)
         {
-            ProductModel model = new ProductModel();
+            //ProductModel model = new ProductModel();
             string spName = "sp_ProductAddEdit";
           var totalRowsCount = await _db.SaveData<dynamic>(spName, new
             {
@@ -51,6 +51,21 @@ namespace POS.Data.Repositories.Implementation
             return productModel.FirstOrDefault();
         }
 
+        public async Task<IEnumerable<ProductModel>> SearchProducts(string query)
+        {
+            var sql = @"
+                SELECT p.Product_Id, p.Product_Name, c.Category_Name, p.Price, p.Brand, p.Description,p.IPath
+                FROM Product p
+                JOIN Category c ON p.Category_ID = c.Category_ID
+                WHERE p.Product_Name LIKE @Query 
+                ORDER BY p.Product_Name";
+
+            var parameters = new { Query = $"%{query}%" };
+
+            //var products = await _db.QueryAsync(sql, parameters);
+            var productList = await _db.GetQueryData<ProductModel, dynamic>(sql, parameters);
+            return productList;
+        }
 
         public async Task<int> DeleteProduct(int Id)
         {

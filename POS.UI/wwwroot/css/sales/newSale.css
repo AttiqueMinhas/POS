@@ -1,0 +1,36 @@
+﻿/* Fixed sidenav, full height */
+.dropdown {
+    width: 532px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    position: relative;
+}
+
+    .dropdown img {
+        transition: transform 0.3s ease;
+    }
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}

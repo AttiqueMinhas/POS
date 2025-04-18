@@ -3,8 +3,6 @@
     ViewData["Title"] = "SalesHistory";
 }
 
-<h1>SalesHistory</h1>
-
 <div class="container">
     <div class="card shadow">
         <div class="card-header">Sale History</div>
@@ -13,31 +11,181 @@
                 <div class="col-3">
                     <label>Search By</label>
                 </div>
-                <div class="col-3">
+                <div class="col-3" id="labelSaleNumber" style="display:none;">
+                    <label>Sale Number</label>
+                </div>
+                <div class="col-3" id="labelStartDate" style="display:none;">
                     <label>Start Date</label>
                 </div>
-                <div class="col-3">
+                <div class="col-3" id="labelEndDate" style="display:none;">
                     <label>End Date</label>
                 </div>
                 <div class="col-3"></div>
             </div>
+            <form class="formSalesHistory">
+                <div class="row">
+                    <div class="col-3">
+                        <select class="form-select fs-6 pt-1 pb-1" id="Searchby">
+                            <option> --Select-- </option>
+                            <option>Dates</option>
+                            <option>Sale Number</option>
+                        </select>
+                    </div>
+                    <div class="col-3" id="saleNumber" style="display:none;">
+                        <div class="input-group">
+                            <input type="text" class="form-control pt-0 pb-0" id="txtSaleNumber">
+                        </div>
+                    </div>
+                    <div class="col-3" id="startdate" style="display:none;">
+                        <div class="input-group date dpicker">
+                            <input type="text" class="form-control pt-0 pb-0" id="txtStartDate">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3" id="enddate" style="display:none;">
+                        <div class="input-group date dpicker" >
+                            <input type="text" class="form-control pt-0 pb-0" id="txtEndDate">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <a class="btn btn-success btn-sm btn-block w-100" id="btnSearch">Search</a>
+                    </div>
+                </div>
+            </form>
+            
+            <hr />
             <div class="row">
-                <div class="col-3">
-                    <select>
-                        <option>Dates</option>
-                        <option>Sale Number</option>
-                    </select>
-                </div>
-                <div class="col-3">
-                    <input type="date" />
-                </div>
-                <div class="col-3">
-                    <input type="date" />
-                </div>
-                <div class="col-3">
-                    <a class="btn btn-success">Search</a>
-                </div>
+                <table id="mySaleHistoryTable" class="table table-striped table-sm dt-responsive nowrap" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Registration Date</th>
+                            <th>Sale Number</th>
+                            <th>Document Type</th>
+                            <th>Client Document</th>
+                            <th>Client Name</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 </div>
+
+@* View Details Modal *@
+
+<!-- View Sale Modal -->
+<div class="modal fade" id="viewSaleModal" tabindex="-1" aria-labelledby="viewSaleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sale Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="saleModalBody">
+                <!-- Content will be loaded dynamically -->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Registration Date</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtRegDate" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Document Type</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtDocType" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Sub Total</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtSTotal" disabled />
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Sale Number</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtSNumber" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Client Document</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtClntDoc" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Taxes</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtTaxess" disabled />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Register User</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtRegUser" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Client Name</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtClntName" disabled />
+                            </div>
+                            <div class="col-12">
+                                <label>Total</label>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" id="txtTotall" disabled />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <table id="saleProductDetailTable" class="table table-striped table-sm dt-responsive nowrap" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnPrintSale">Print</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/app/js/common.js" asp-append-version="true"></script>
+    <script src="~/app/js/SaleHistory.js" asp-append-version="true"></script>
+}

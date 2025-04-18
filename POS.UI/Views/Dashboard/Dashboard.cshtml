@@ -1,4 +1,135 @@
-﻿@{
+﻿@using POS.Data.Models
+@model DashboardData
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 mb-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h6 class="card-title text-primary">Total Sales</h6>
+                    <p class="fs-3">@Model.MainMetrics.TotalSales</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h6 class="card-title text-success">Total Revenue</h6>
+                    <p class="fs-3">Rs. @Model.MainMetrics.TotalRevenues.ToString("N2")</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h6 class="card-title text-secondary">Total Products</h6>
+                    <p class="fs-3">@Model.MainMetrics.TotalProducts</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-3">
+            <div class="card shadow h-100">
+                <div class="card-body">
+                    <h6 class="card-title text-warning">Total Categories</h6>
+                    <p class="fs-3">@Model.MainMetrics.TotalCategories</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-header bg-white">Last Week Sales</div>
+                <div class="card-body">
+                    <div id="lastWeekSalesChart" style="height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-header bg-white">Top Selling Products</div>
+                <div class="card-body">
+                    <div id="topProductsChart" style="height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', { packages: ['corechart'] });
+        google.charts.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            // Last Week Sales Chart (Line Chart)
+            var lastWeekSalesData = new google.visualization.DataTable();
+            lastWeekSalesData.addColumn('string', 'Day');
+            lastWeekSalesData.addColumn('number', 'Sales');
+
+            lastWeekSalesData.addRows([
+        @foreach (var sale in Model.LastWeekSales)
+        {
+            <text>['@sale.SaleDate.ToString("ddd, MMM dd")', @sale.SalesCount], </text>
+        }
+                    ]);
+
+            var lastWeekSalesOptions = {
+                title: 'Daily Sales Trend',
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                vAxis: { minValue: 0 },
+                chartArea: { width: '85%', height: '75%' }
+            };
+
+            var lastWeekSalesChart = new google.visualization.LineChart(
+                document.getElementById('lastWeekSalesChart'));
+            lastWeekSalesChart.draw(lastWeekSalesData, lastWeekSalesOptions);
+
+            // Top Products Chart (Bar Chart)
+            var topProductsData = new google.visualization.DataTable();
+            topProductsData.addColumn('string', 'Product');
+            topProductsData.addColumn('number', 'Quantity Sold');
+
+            topProductsData.addRows([
+        @foreach (var product in Model.TopProducts)
+        {
+            <text>['@product.ProductName', @product.TotalSold], </text>
+        }
+                    ]);
+
+            var topProductsOptions = {
+                title: 'Top Selling Products',
+                legend: { position: 'none' },
+                chartArea: { width: '85%', height: '75%' },
+                hAxis: { minValue: 0 }
+            };
+
+            var topProductsChart = new google.visualization.BarChart(
+                document.getElementById('topProductsChart'));
+            topProductsChart.draw(topProductsData, topProductsOptions);
+        }
+
+        // Redraw charts when window resizes
+        $(window).resize(function () {
+            drawCharts();
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+@* @{
     ViewData["Title"] = "Dashboard";
 }
 
@@ -65,4 +196,4 @@
             chart1.draw(data, options);
         }
     </script>
-}
+} *@
