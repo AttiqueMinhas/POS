@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\POS.UI.props" />
-</Project>
