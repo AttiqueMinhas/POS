@@ -1,0 +1,83 @@
+﻿@using POS.Data.Models
+@model List<MenuItem>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h3 class="brand">
+            <span>EaseSale</span>
+        </h3>
+    </div>
+    <div class="sidebar-menu">
+        @foreach (var item in Model)
+        {
+            @if (item.Children.Any())
+            {
+                <div class="menu-parent" data-menu-id="@item.MenuItemId">
+                    <div class="parent-link">
+                        @if (!string.IsNullOrEmpty(item.IconClass))
+                        {
+                            <i class="@item.IconClass" style="color: #ffffff;"></i>
+                        }
+                        <span>@item.MenuText</span>
+                    </div>
+                    <div class="submenu-flyout" id="flyout-@item.MenuItemId">
+                        @foreach (var child in item.Children)
+                        {
+                            <a href="@child.MenuUrl" class="submenu-link">
+                                @child.MenuText
+                            </a>
+                        }
+                    </div>
+                </div>
+            }
+            else
+            {
+                <a href="@item.MenuUrl" class="menu-link">
+                    @if (!string.IsNullOrEmpty(item.IconClass))
+                    {
+                        <i class="@item.IconClass"></i>
+                    }
+                    <span>@item.MenuText</span>
+                </a>
+            }
+        }
+    </div>
+</div>
+@* <div class="sidebar">
+    <div class="sidebar-header">
+        <h3 class="brand">
+            <span>NOVA</span>
+        </h3>
+    </div>
+    <div class="sidebar-menu">
+        @foreach (var item in Model)
+        {
+            if (item.Children.Any())
+            {
+                <div class="sidebar-section">
+                    <div class="sidebar-title">@item.MenuText</div>
+                    @foreach (var child in item.Children)
+                    {
+                        <a href="@child.MenuUrl" class="sidebar-link">
+                            @if (!string.IsNullOrEmpty(child.IconClass))
+                            {
+                                <i class="@child.IconClass"></i>
+                            }
+                            @child.MenuText
+                        </a>
+                    }
+                </div>
+            }
+            else
+            {
+                <a href="@item.MenuUrl" class="sidebar-link">
+                    @if (!string.IsNullOrEmpty(item.IconClass))
+                    {
+                        <i class="@item.IconClass"></i>
+                    }
+                    @item.MenuText
+                </a>
+            }
+        }
+    </div>
+</div> *@

@@ -1,0 +1,100 @@
+﻿body {
+}
+
+/*html, body {
+    overflow-x: hidden;
+}
+
+.container {
+    overflow: hidden;
+}*/
+
+
+/*#saleReportTable thead th {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+}*/
+
+/* Ensure the table takes full width */
+/*#saleReportTable {
+    width: 100% !important;
+    margin-bottom: 0;
+}*/
+
+/* Container for the table */
+/*.table-responsive {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+}*/
+
+/* Remove extra padding from card body */
+/*.card-body {
+    padding-bottom: 0;
+}
+.dataTables_scroll {
+    position: relative;
+}
+
+.dataTables_scrollBody {
+    overflow-y: auto !important;
+    max-height: 700px !important;
+}*/
+
+/* Style the export button */
+/*.dt-buttons .btn {
+    margin-bottom: 10px;
+}*/
+
+/* Remove extra margin from the card */
+/*.card {
+    margin-bottom: 0;
+}*/
+
+/* Set fixed height and enable scrolling */
+/*#saleReportTable_wrapper .dataTables_scrollBody {
+    max-height: 600px !important;*/ /* Adjust this value as needed */
+    /*overflow-y: auto !important;
+}*/
+
+/* Fix header position */
+/*#saleReportTable thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+}*/
+
+/* Remove extra padding from table container */
+/*.dataTables_wrapper {
+    padding-bottom: 0;
+}*/
+
+#saleReportTable td {
+    font-size: 14px;
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
+/* Ensure the container for the search input and buttons is displayed flexibly */
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    /* Style the search input to fit within the flex container */
+    .dataTables_wrapper .dataTables_filter input {
+        margin-right: 10px; /* Space between search input and button */
+    }
+
+/* Ensure buttons are aligned and spaced correctly */
+.dataTables_wrapper .dataTables_buttons {
+    margin-left: auto; /* Push buttons to the right */
+}
+
+.btn-export {
+    margin-left: 10px; /* Space between buttons if you have multiple */
+}
