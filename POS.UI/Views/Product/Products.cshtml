@@ -10,7 +10,7 @@
                 <tr>
                     <th>Photo</th>
                     <th>Brand</th>
-                    <th>Category_Name</th>
+                    <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
                     <th>State</th>
@@ -24,9 +24,9 @@
                             <img src="@Url.Content(product.IPath)" style="width:100px;height:100px;" />
                         </td>
                         <td>@product.Brand</td>
-                        <td>@product.Category_Name</td>
+                        <td>@product.Product_Name</td>
+                        <td>@product.Quantity</td>
                         <td>@product.Price</td>
-                        <td>@product.Status</td>
                         @if (product.Status)
                         {
                             <td>Active</td>

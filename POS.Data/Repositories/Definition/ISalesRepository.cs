@@ -15,6 +15,7 @@ namespace POS.Data.Repositories.Definition
         Task<string> AddNewSale(SaleRequest request, int userId);
         Task<SaleHistoryResponse> SaleHistory(SaleHistoryRequest request);
         Task<SaleHistoryResponse> GetSaleBySaleNumber(SaleHistoryRequest request);
+        Task<List<ProductRecommendationModel>> getRecommendedProducts(ProductRecommendationRequest request);
         //Task<IEnumerable<ProductModel>> SearchProducts(string query);
     }
 }

@@ -1,6 +1,7 @@
 ﻿
 var A = A || {};
 A.NewSale = {
+    table: '',
     Params: {
         productId: 0,
         productName: '',
@@ -20,6 +21,78 @@ A.NewSale = {
     ProductList: [],
     isValid: function () {
         $('#saleType').val()
+    },
+    getRecommendedProducts: function () {
+        request = {
+            productId: A.NewSale.Params.productId
+        };
+        debugger
+        $.ajax({
+            url: '/Sales/GetRecommendedProducts',
+            type: 'post',
+            data: JSON.stringify(request),
+            contentType: 'application/json;charset=utf-8',
+            dataType: 'json',
+            success: function (response) {
+                debugger
+                console.log(response);
+                if (response && response.length > 0) {
+                    //A.NewSale.showRecommendations(response);
+                    //A.NewSale.table.clear().rows.add(response).draw();
+                    A.NewSale.table.rows.add(response).draw();
+                }
+            },
+            error: function (error) {
+                debugger
+                console.log(error);
+            }
+        });
+
+    },
+    showRecommendations: function (products) {
+        // Clear previous recommendations
+        $('#recommendation-container').empty();
+        debugger
+        // Create a recommendation card for each product
+        products.forEach(product => {
+            const card = `
+            <div class="recommendation-card" data-product-id="${product.RecommendedProductID}">
+                <span class="product-name">${product.RecommendedProduct}</span>
+                <span class="product-price">$${product.RP_Price}</span>
+                <button class="btn-add">+ Add</button>
+                <button class="btn-close">✕</button>
+            </div>
+        `;
+            $('#recommendation-container').append(card);
+        });
+        debugger
+        // Handle button clicks
+        $('.btn-add').click(function () {
+            const productId = $(this).closest('.recommendation-card').data('product-id');
+            addToSales(productId);
+        });
+
+        $('.btn-close').click(function () {
+            $(this).closest('.recommendation-card').remove();
+        });
+    },
+    addRecommendedProduct: function (productName) {
+        $.ajax({
+            url: '/Sales/AddRecommendedProduct',
+            type: 'POST',
+            data: JSON.stringify({
+                productName: productName
+            }),
+            contentType: 'application/json',
+            success: function (response) {
+                toastr.success('Product added successfully!');
+                // Refresh your sales table or update UI
+                A.NewSale.refreshSalesTable();
+            },
+            error: function (xhr) {
+                toastr.error('Error adding product: ' + xhr.responseText);
+            }
+        });
     }
 } 
 
@@ -31,7 +104,58 @@ $(document).ready(function () {
         $("#dropdownIcon").toggleClass("rotate-180");
     });
 
-    
+    //DataTable
+    A.NewSale.table = $('#recommendedProductTable').DataTable({
+        paging: false,
+        searching: false,
+        info: false,
+        lengthChange: false,
+        ordering: false,
+        columns: [
+            {
+                data: 'recommendedProduct',
+                render: function (data, type, row) {
+                    // Create underlined clickable link
+                    //return `<a href="#" class="recommended-product-link" 
+                    //    data-product-name="${data}" 
+                    //    style="text-decoration: underline; cursor: pointer;">
+                    //    ${data}
+                    //    </a>`;
+                    return `<a href="#" class="recommended-product-link" 
+                        style="text-decoration: underline; cursor: pointer;">
+                        ${data}
+                        </a>`;
+                }
+            },
+            {
+                data: 'rP_Price',
+                render: $.fn.dataTable.render.number(',', '.', 2, 'Rs. ')
+            }
+        ],
+        createdRow: function (row, data, dataIndex) {
+            // Add hover effect
+            $(row).find('.recommended-product-link').hover(
+                function () { $(this).css('color', '#0056b3'); },
+                function () { $(this).css('color', ''); }
+            );
+        }
+    });
+
+    // Handle click events on recommended products
+    $(document).on('click', '.recommended-product-link', function (e) {
+        debugger
+        e.preventDefault();
+        //const productId = $(this).data('product-name');
+        var productName = $(this).text().trim();
+        //productName = pro
+        // Call your AJAX function
+        //A.NewSale.addRecommendedProduct(productName);
+        $('#searchProduct').val(productName);
+        debugger
+        $('#searchProduct').trigger('input');
+    });
+
+
     $('#searchProduct').on('input', function () {
         debugger
         var searchQuery = $(this).val();
@@ -132,7 +256,10 @@ $(document).ready(function () {
                 Quantity: A.NewSale.Params.quantity,
                 Price: A.NewSale.Params.price,
                 Total: A.NewSale.Params.total
-            });
+            }
+        );
+        debugger
+        A.NewSale.getRecommendedProducts();
     });
     /*$(document).on('click', '#searchProduct', function () { console.log("Test") });*/
     $(document).on('submit', '.newSaleForm', function (e) {
@@ -176,6 +303,7 @@ $(document).ready(function () {
                 document.getElementById('totalTaxes').value = "";
                 document.getElementById('total').value = "";
                 $('#productTableBody').remove();
+                A.NewSale.table.clear().draw();
             },
             error: function (error) {
                 debugger

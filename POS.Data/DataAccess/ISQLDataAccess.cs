@@ -20,5 +20,6 @@ namespace POS.Data.DataAccess
         Task<IEnumerable<T>> GetQueryTableData<T, P>(string spName, P parameters, string connectionId = "DefaultConnection");
         Task<SqlMapper.GridReader> QueryMultipleAsync<P>(string spName, P parameters, string connectionId = "DefaultConnection");
         Task<List<string>> GetQueryAsync<T, P>(string spName, P parameters, string connectionId = "DefaultConnection");
+        Task<List<T>> GetDataListFromSP<T, P>(string spName, P parameters, string connectionId = "DefaultConnection");
     }
 }

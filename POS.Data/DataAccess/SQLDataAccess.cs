@@ -77,5 +77,16 @@ namespace POS.Data.DataAccess
             using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
             return (await connection.QueryAsync<string>(spName, parameters, commandType: CommandType.Text)).ToList();
         }
+
+        public async Task<List<T>> GetDataListFromSP<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        {
+            using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+            return (List<T>)await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.StoredProcedure);
+        }
+        //public async Task<T> GetObjData<T, P>(string spName, P parameters, string connectionId = "DefaultConnection")
+        //{
+        //    using IDbConnection connection = new SqlConnection(_config.GetConnectionString(connectionId));
+        //    return await connection.QueryAsync<T>(spName, parameters, commandType: CommandType.StoredProcedure);
+        //}
     }
 }

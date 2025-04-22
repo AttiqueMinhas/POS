@@ -119,6 +119,13 @@ namespace POS.UI.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IActionResult> GetRecommendedProducts([FromBody] ProductRecommendationRequest request)
+        {
+           var response = await _repo.getRecommendedProducts(request);
+            return Json(response);
+        }
+
         //[HttpGet]
         //public IActionResult PrintSale(string saleNumber)
         //{

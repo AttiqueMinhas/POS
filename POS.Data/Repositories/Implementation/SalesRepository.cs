@@ -144,5 +144,25 @@ namespace POS.Data.Repositories.Implementation
             }
         }
 
+        public async Task<List<ProductRecommendationModel>> getRecommendedProducts(ProductRecommendationRequest request)
+        {
+            try
+            {
+                string spName = "sp_GetRecommendedProducts";
+                // Log the parameter for debugging
+                //Console.WriteLine($"Parameter being sent: @pId = {request.ProductId}");
+                var parameters = new DynamicParameters();
+                parameters.Add("pId", request.ProductId);  // Fixed: Added '@'
+
+                var response = await _db.GetDataListFromSP<ProductRecommendationModel, dynamic>(spName, parameters);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in getRecommendedProducts: " + ex.Message, ex);
+            }
+
+        }
+
     }
 }
