@@ -9,7 +9,7 @@ namespace POS.Data.Models.ModelVM.Request
 {
     public class LoginRequest
     {
-        [Required]
+        [Required,Display(Name ="Username or Email")]
         [EmailAddress]
         public string UserNameOrEmail { get; set; }
         [Required]

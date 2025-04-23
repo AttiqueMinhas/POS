@@ -4,7 +4,7 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<div class="container">
+<div class="container mt-5 pt-3">
     <div class="row">
         <div class="col-md-3 mb-3">
             <div class="card shadow h-100">
@@ -81,13 +81,13 @@
 
             var lastWeekSalesOptions = {
                 title: 'Daily Sales Trend',
-                curveType: 'function',
-                legend: { position: 'bottom' },
-                vAxis: { minValue: 0 },
+                // curveType: 'function',
+                // legend: { position: 'bottom' },
+                hAxis: { minValue: 0 },
                 chartArea: { width: '85%', height: '75%' }
             };
 
-            var lastWeekSalesChart = new google.visualization.LineChart(
+            var lastWeekSalesChart = new google.visualization.ColumnChart(
                 document.getElementById('lastWeekSalesChart'));
             lastWeekSalesChart.draw(lastWeekSalesData, lastWeekSalesOptions);
 
@@ -105,12 +105,15 @@
 
             var topProductsOptions = {
                 title: 'Top Selling Products',
-                legend: { position: 'none' },
+                // legend: { position: 'none' },
                 chartArea: { width: '85%', height: '75%' },
                 hAxis: { minValue: 0 }
             };
 
-            var topProductsChart = new google.visualization.BarChart(
+            // var topProductsChart = new google.visualization.BarChart(
+            //     document.getElementById('topProductsChart'));
+            var topProductsChart = new google.visualization.
+            PieChart(
                 document.getElementById('topProductsChart'));
             topProductsChart.draw(topProductsData, topProductsOptions);
         }

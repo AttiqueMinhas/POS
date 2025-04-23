@@ -1,4 +1,5 @@
 
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using POS.Data.DataAccess;
 using POS.Data.Repositories.Account;
@@ -27,9 +28,10 @@ builder.Services.AddHttpContextAccessor(); // Add this if you have used IHttpCon
 builder.Services.AddSession(options =>
 {
     options.Cookie.Name = ".POS.Session";
-    options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+    options.IdleTimeout = TimeSpan.FromMinutes(2); // Set session timeout
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
+    //options.Cookie.Expiration = TimeSpan.FromMinutes(2);
 });
 //For Authorization purpose.
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
@@ -37,6 +39,11 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = "/Account/Login"; // Path to the login page
         options.AccessDeniedPath = "/Account/AccessDenied"; // Path to access denied page
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(2);// Match session timeout
+        options.SlidingExpiration = false;// Disable sliding expiration for strict timeout
+        options.Cookie.HttpOnly = true;
+        options.Cookie.IsEssential = true;
+        options.Cookie.MaxAge = TimeSpan.FromMinutes(2); // Explicit cookie expiration
     });
 
 builder.Services.AddAuthorization();
@@ -63,7 +70,7 @@ app.UseAuthorization();  // Adds authorization to the request pipeline
 
 //app.UseRouting();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

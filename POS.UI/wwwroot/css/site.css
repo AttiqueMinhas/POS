@@ -60,8 +60,9 @@ html, body {
 }
 
 .sidebar-header {
-    padding: 20px;
+    padding: 10px 5px 10px 20px;
     border-bottom: 1px solid #3d5166;
+    background-color: #5d7fa1;
 }
 
 .sidebar-menu {

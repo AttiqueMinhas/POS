@@ -5,50 +5,75 @@
     Layout = "_UserLayout";
 }
 
-<div class="container">
+<div class="container align-items-center">
     <div class="row">
-        <div class="col-8 border-1 border-light text-center m-5" id="div-Center">
-            <h2 class="text-white mb-5">Login</h2>
-            <div class="col-6"></div>
-            <div class="col-6">
-                <form asp-action="Login" asp-controller="Account">
-                    <input type="hidden" name="ReturnUrl" value="@ViewData["ReturnUrl"]" />
-                    <div class="row mb-3">
-                        @if (!String.IsNullOrEmpty(ViewBag.emailMessage))
-                        {
-                            <span>@ViewBag.emailMessage</span>
-                        }
-                        @if (!String.IsNullOrEmpty(ViewBag.passwordMessage))
-                        {
-                            <span>@ViewBag.passwordMessage</span>
-                        }
-                        <div class="col-4 text-start">
-                            <label asp-for="UserNameOrEmail" class="form-label"></label>
-                        </div>
-                        <div class="col-8">
-                            <input type="text" asp-for="UserNameOrEmail" class="form-control" />
-                            <span asp-validation-for="UserNameOrEmail"></span>
+        <div class="col-7 border-1 border-light text-center m-5" id="div-Center">
+            <div class="row">
+                <div class="col-6">
+                    <div class="ms-5">
+                        <h2 class="text-white mb-5">Login</h2>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-12">
+                            <form asp-action="Login" asp-controller="Account">
+                                <input type="hidden" name="ReturnUrl" value="@ViewData["ReturnUrl"]" />
+                                <div class="row mb-3">
+                                    @if (!String.IsNullOrEmpty(ViewBag.emailMessage))
+                                    {
+                                        <span>@ViewBag.emailMessage</span>
+                                    }
+                                    @if (!String.IsNullOrEmpty(ViewBag.passwordMessage))
+                                    {
+                                        <span>@ViewBag.passwordMessage</span>
+                                    }
+                                    <div class="col-4 text-start">
+                                        <label asp-for="UserNameOrEmail" class="form-label"></label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" asp-for="UserNameOrEmail" class="form-control" />
+                                        <span asp-validation-for="UserNameOrEmail"></span>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-4 text-start">
+                                        <label asp-for="Password" class="form-label"></label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="password" asp-for="Password" class="form-control pswdField" />
+                                        <span class="password-toggle position-absolute" style="right: 580px; top: 50%; transform: translateY(-20%); cursor: pointer;">
+                                            <img src="/assets/closed_Eye.png" id="toggleIcon" width="20" />
+                                        </span>
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div style="height:30px;"></div>
+                                </div>
+                                <div class="row mt-5">
+                                    <div class="col-4 text-start"></div>
+                                    <div class="col-8">
+                                        <input type="submit" value="Login" class="btn btn-primary col-12" />
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-4 text-start">
-                            <label asp-for="Password" class="form-label"></label>
-                        </div>
-                        <div class="col-8">
-                            <input type="password" asp-for="Password" class="form-control" />
-                            <span asp-validation-for="Password"></span>
-                        </div>
-                    </div>
-                    <div class="row mt-5">
-                        <div class="col-4 text-start"></div>
-                        <div class="col-8">
-                            <input type="submit" value="Login" class="btn btn-primary col-12" />
-                        </div>
-                    </div>
-                </form>
+                    
+                    @* <div class="col-4">
+                    </div> *@
+                    
+                </div>
+                <div class="col-6 mt-3">
+                    <img src="~/assets/inventory-analysis.png" class="rounded-3" width="250" height="250"/>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-   
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/app/js/login.js"></script>
+}

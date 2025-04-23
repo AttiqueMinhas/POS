@@ -1,11 +1,12 @@
 ﻿body {
-    background-color: black;
+    background: white;
 }
 
 #div-Center {
     padding: 50px;
     position: absolute;
-    background-color: rgba(255,255,255,0.1);
+    top: 23%;
+    background-color: rgba(44,62,80,0.8);
     align-content: center;
     box-shadow: rgba(0,0,0,0.1);
     border-radius: 25px;
@@ -25,4 +26,21 @@
 .error_Msg{
     color: red;
     text-align: left;
+}
+
+/*.pswdField {
+    background-color: white;
+    background-image: url('/assets/closed_Eye.png');
+    background-position: 290px 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;*/ /* Adjust size */
+/*}*/
+
+.pswdField {
+    padding-right: 35px; /* Space for the eye icon */
+}
+
+.password-toggle img {
+    width: 20px;
+    height: 20px;
 }

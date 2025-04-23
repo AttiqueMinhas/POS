@@ -112,7 +112,7 @@ namespace POS.UI.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Dashboard", "Dashboard");
             }
             // Successful login logic here (e.g., create claims, sign in user, etc.)
         }

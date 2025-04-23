@@ -76,24 +76,24 @@ A.NewSale = {
             $(this).closest('.recommendation-card').remove();
         });
     },
-    addRecommendedProduct: function (productName) {
-        $.ajax({
-            url: '/Sales/AddRecommendedProduct',
-            type: 'POST',
-            data: JSON.stringify({
-                productName: productName
-            }),
-            contentType: 'application/json',
-            success: function (response) {
-                toastr.success('Product added successfully!');
-                // Refresh your sales table or update UI
-                A.NewSale.refreshSalesTable();
-            },
-            error: function (xhr) {
-                toastr.error('Error adding product: ' + xhr.responseText);
-            }
-        });
-    }
+    //addRecommendedProduct: function (productName) {
+    //    $.ajax({
+    //        url: '/Sales/AddRecommendedProduct',
+    //        type: 'POST',
+    //        data: JSON.stringify({
+    //            productName: productName
+    //        }),
+    //        contentType: 'application/json',
+    //        success: function (response) {
+    //            toastr.success('Product added successfully!');
+    //            // Refresh your sales table or update UI
+    //            A.NewSale.refreshSalesTable();
+    //        },
+    //        error: function (xhr) {
+    //            toastr.error('Error adding product: ' + xhr.responseText);
+    //        }
+    //    });
+    //}
 } 
 
 $(document).ready(function () {
